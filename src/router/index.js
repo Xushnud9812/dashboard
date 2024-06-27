@@ -25,6 +25,21 @@ const routes = [
         name: 'edit-user',
         component: () => import('../pages/users/edit-user.vue')
       },
+      {
+        path: '/products',
+        name: 'products',
+        component: () => import('../pages/products/products-list.vue')
+      },
+      {
+        path: '/create-product',
+        name: 'create-product',
+        component: () => import('../pages/products/create-product.vue')
+      },
+      {
+        path: '/edit-product/:id',
+        name: 'edit-product',
+        component: () => import('../pages/products/edit-product.vue')
+      },
 
     ]
   },

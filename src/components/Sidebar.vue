@@ -4,7 +4,27 @@
     <el-radio-button :value="true">collapse</el-radio-button>
   </el-radio-group> -->
   <el-menu default-active="2" class="el-menu-vertical-demo  border-t-[1px] border-gray-200 !bg-[#001529]"
-    :collapse="store.isCollapse" @open="handleOpen" @close="handleClose">
+    :collapse="store.isCollapse" text-color="#fff" :router="true" @open="handleOpen" @close="handleClose">
+
+    <el-menu-item class="" index="/">
+      <el-icon>
+        <setting />
+      </el-icon>
+      <template #title class="text-white">Dashboard</template>
+    </el-menu-item>
+    <el-menu-item index="/users">
+      <el-icon><icon-menu /></el-icon>
+      <template #title class="text-white">
+        Users
+
+      </template>
+    </el-menu-item>
+    <el-menu-item index="/products">
+      <el-icon><icon-menu /></el-icon>
+      <template #title class="text-white">
+        Products
+      </template>
+    </el-menu-item>
     <el-sub-menu index="1">
       <template #title>
 
@@ -13,28 +33,16 @@
         </el-icon>
         <span class="text-white">Gemifikatsiya</span>
       </template>
-      <!-- <el-menu-item-group show-timeout="100">
+      <el-menu-item-group show-timeout="100">
         <el-menu-item index="1-1">item one</el-menu-item>
         <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group> -->
+      </el-menu-item-group>
 
 
     </el-sub-menu>
-    <el-menu-item index="2">
-      <el-icon><icon-menu /></el-icon>
-      <template #title class="text-white">
-        <router-link to="/users">
-          Users
-        </router-link>
-      </template>
-    </el-menu-item>
 
-    <el-menu-item index="4">
-      <el-icon>
-        <setting />
-      </el-icon>
-      <template #title class="text-white">Navigator Four</template>
-    </el-menu-item>
+
+
   </el-menu>
 </template>
 
@@ -63,5 +71,14 @@ const handleClose = (key: string, keyPath: string[]) => {
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;
+}
+
+.el-menu-item:hover {
+  background-color: rgb(121, 152, 236);
+}
+
+.is-active {
+  background-color: rgb(121, 152, 236);
+  color: #000 !important;
 }
 </style>
